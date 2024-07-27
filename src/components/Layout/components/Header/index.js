@@ -11,8 +11,6 @@ import {
     faEarthAsia,
     faCircleQuestion,
     faKeyboard,
-    faCloudUpload,
-    faMessage,
     faUser,
     faCoins,
     faGear,
@@ -27,6 +25,8 @@ import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import { type } from '@testing-library/user-event/dist/type';
+import { MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles); //Cách sử dụng được ký tự "-" cho class name
 const MENU_ITEMS = [
@@ -143,12 +143,12 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 200]} content="Message" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -160,7 +160,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://media.cnn.com/api/v1/images/stellar/prod/221209205346-lionel-messi-netherlands.jpg?c=16x9&q=h_833,w_1480,c_fill"
                                 alt="Nguyen Van A"
